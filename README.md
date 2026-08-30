@@ -10,6 +10,6 @@ Copy the commands exactly as writen below
 2. Click the green "Code" button
 3. If your not already on the local tab; click local at the top
 4. Click "Download ZIP"
-5. In your terminal enter this exact command: cd 21-Days-of-Python
+5. In your terminal enter: cd 21-Days-of-Python
 6. Now enter this command to run the program: python main.py
 7. You have successfully completed this setup guide to test out the program, Good job! :)
