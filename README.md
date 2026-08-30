@@ -5,7 +5,7 @@ A little Python project I’m making for the Stardance Sticky Streaks challenge!
 
 # How to install!
 
-Note in the terminal spaces before or after the commands do not matter
+Copy the commands exactly as writen below
 1. Go to the Github Repository,
 2. Click the green "Code" button
 3. If your not already on the local menu; click local at the top
