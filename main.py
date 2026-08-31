@@ -13,6 +13,11 @@ def qtype(text):
         print(char, end='', flush=True)
         slp(0.025)
 
+def stype(text):
+    for char in text:
+        print(char, end='', flush=True)
+        slp(0.3)
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -119,6 +124,19 @@ while isactive == 1:
         qtype("Press Enter to return to the menu")
         mode = input()
         clear()
+    elif mode == "42":
+        clear()
+        qtype("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything")
+        stype("\033[1m" + "...")
+        slp(0.5)
+        print("")
+        print("")
+        print("")
+        print("")
+        type("\x1B[3m" + "But what is the question?" + "\x1B[0m")
+        slp(1)
+        clear()
+        mode = "nmenu"
     else:
         clear()
         qtype("Invalid option. Please try again.")
