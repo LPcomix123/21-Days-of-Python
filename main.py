@@ -134,7 +134,7 @@ while isactive == 1:
         print("")
         print("")
         type("\x1B[3m" + "But what is the question?" + "\x1B[0m")
-        slp(1)
+        slp(2)
         clear()
         mode = "nmenu"
     else:
