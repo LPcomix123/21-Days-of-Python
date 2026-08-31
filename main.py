@@ -71,34 +71,9 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "1":
+    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6":
         clear()
-        qtype("Feature 1 is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
-    elif mode == "2":
-        clear()
-        qtype("Feature 2 is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
-    elif mode == "3": 
-        clear()
-        qtype("Feature 3 is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
-    elif mode == "4":
-        clear()
-        qtype("Feature 4 is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
-    elif mode == "5":
-        clear()
-        qtype("Feature 5 is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
-    elif mode == "6":
-        clear()
-        qtype("Feature 6 is currently under development. Please check back later.")
+        qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
         mode = "nmenu"
     elif mode == "7":
