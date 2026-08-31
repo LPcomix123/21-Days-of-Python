@@ -117,7 +117,7 @@ while isactive == 1:
         slp(0.5)
         print(" ")
         print(" ")
-        qtype("Current day: " + str(current_day))
+        qtype("Current day: " + str(current_day) + "/21")
         slp(0.5)
         print(" ")
         print(" ")
