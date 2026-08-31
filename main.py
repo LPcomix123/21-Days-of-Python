@@ -32,7 +32,7 @@ isactive = 1
 mode = "startup"
 
 while isactive == 1:
-    if mode == "startup":
+    if mode == "startup": # Startup Message
         clear()
         slp(1)
         type("Hello there! :)")
@@ -42,7 +42,7 @@ while isactive == 1:
         slp(1)
         clear()
         mode = "amenu"
-    elif mode == "amenu":
+    elif mode == "amenu": # Animated Menu
         clear()
         type("21 Days of Python")
         print("")
@@ -54,7 +54,7 @@ while isactive == 1:
             print("")
         type("Option number: ")
         mode = input()
-    elif mode == "nmenu" or mode == "":
+    elif mode == "nmenu" or mode == "": # Not Animated Menu
         clear()
         print("21 Days of Python")
         print("Please select an option to continue:")
@@ -62,7 +62,7 @@ while isactive == 1:
         for item in menu_options:
             print(item)
         mode = input("Option number: ")
-    elif mode == "0":
+    elif mode == "0": # Exit
         clear()
         qtype("Exiting the program...")
         slp(0.25)
@@ -71,12 +71,12 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6":
+    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
         mode = "nmenu"
-    elif mode == "7":
+    elif mode == "7": # About Section
         clear()
         qtype("About this program:")
         slp(0.5)
@@ -97,7 +97,7 @@ while isactive == 1:
         qtype("Press Enter to return to the menu")
         mode = input()
         clear()
-    elif mode == "42":
+    elif mode == "42": # Easter Egg
         clear()
         qtype("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything")
         stype("\033[1m" + "...")
@@ -110,7 +110,7 @@ while isactive == 1:
         slp(2)
         clear()
         mode = "nmenu"
-    else:
+    else: # Invalid Option
         clear()
         qtype("Invalid option. Please try again.")
         slp(1)
