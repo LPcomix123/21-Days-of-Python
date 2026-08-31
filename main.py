@@ -83,7 +83,6 @@ while isactive == 1:
         mode = "nmenu"
     elif mode == "2": # Coin Flip
         clear()
-        result = random.choice(["Heads", "Tails"])
         type("🪙  Coin Flip")
         print(" ")
         print(" ")
@@ -93,15 +92,21 @@ while isactive == 1:
         print("🪙  Coin Flip")
         print(" ")
         if flip == "":
+            result = random.choice(["Heads", "Tails"])
             sstype("...")
             clear()
             print("🪙  Coin Flip")
             print(" ")
             qtype("Your Coin Landed on: " + result)
             slp(2)
+            mode = "nmenu"
         elif flip == "exit":
             mode = "nmenu"
-        mode = "nmenu"
+        else:
+            clear()
+            qtype("Invalid option. Please try again.")
+            slp(1)
+            mode = "2"
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
@@ -135,6 +140,11 @@ while isactive == 1:
         type("\x1B[3m" + "But what is the question?" + "\x1B[0m")
         slp(2)
         clear()
+        mode = "nmenu"
+    elif mode == "invalid": # Invalid Option
+        clear()
+        qtype("Invalid option. Please try again.")
+        slp(1)
         mode = "nmenu"
     else: # Invalid Option
         clear()
