@@ -48,7 +48,7 @@ while isactive == 1:
         print("")
         type("Please select an option to continue:")
         print("")
-        menu_options = ["1. feature1", "2. feature2", "3. feature3", "4. feature4", "5. feature5", "6. feature6", " ", "7. About", "0. Exit"]
+        menu_options = ["1. Dice Roller", "2. Coin Flip", "3. Countdown", "4. Magic 8 Ball", "5. Calculator", "6. Mini Slot Machine", "7. Text Stats", " ", "8. About", "0. Exit"]
         for item in menu_options:
             qtype(item)
             print("")
@@ -58,7 +58,7 @@ while isactive == 1:
         clear()
         print("21 Days of Python")
         print("Please select an option to continue:")
-        menu_options = ["1. feature1", "2. feature2", "3. feature3", "4. feature4", "5. feature5", "6. feature6", " ", "7. About", "0. Exit"]
+        menu_options = ["1. Dice Roller", "2. Coin Flip", "3. Countdown", "4. Magic 8 Ball", "5. Calculator", "6. Mini Slot Machine", "7. Text Stats", " ", "8. About", "0. Exit"]
         for item in menu_options:
             print(item)
         mode = input("Option number: ")
@@ -71,12 +71,12 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6": # Feature Under Development
+    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
         mode = "nmenu"
-    elif mode == "7": # About Section
+    elif mode == "8": # About Section
         clear()
         qtype("About this program:")
         slp(0.5)
