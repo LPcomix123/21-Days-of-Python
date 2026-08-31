@@ -51,3 +51,34 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
+
+    if mode == "1":
+        print("Feature 1 is currently under development. Please check back later.")
+
+    if mode == "2":
+        print("Feature 2 is currently under development. Please check back later.")
+
+    if mode == "3": 
+        print("Feature 3 is currently under development. Please check back later.")
+
+    if mode == "4":
+        print("Feature 4 is currently under development. Please check back later.")
+
+    if mode == "5":
+        print("Feature 5 is currently under development. Please check back later.")
+
+    if mode == "6":
+        print("Feature 6 is currently under development. Please check back later.")
+
+    if mode == "7":
+        type("About this program.")
+        slp(0.5)
+        print("")
+        print("")
+        qtype("This is a Python project I'm building for the Stardance Sticky Streaks challenge")
+        slp(0.5)
+        print("")
+        qtype("This project is being built over 21 days, with a new feature being developed every 3 days once I've completed the Foundation")
+        slp(0.5)
+        print("")
+        qtype("Current day: 1")
