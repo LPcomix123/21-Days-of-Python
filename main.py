@@ -141,11 +141,6 @@ while isactive == 1:
         slp(2)
         clear()
         mode = "nmenu"
-    elif mode == "invalid": # Invalid Option
-        clear()
-        qtype("Invalid option. Please try again.")
-        slp(1)
-        mode = "nmenu"
     else: # Invalid Option
         clear()
         qtype("Invalid option. Please try again.")
