@@ -18,6 +18,11 @@ def stype(text):
         print(char, end='', flush=True)
         slp(0.3)
 
+def sstype(text):
+    for char in text:
+        print(char, end='', flush=True)
+        slp(1)
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -71,10 +76,31 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "1" or mode == "2" or mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
+    elif mode == "1" or mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
+        mode = "nmenu"
+    elif mode == "2": # Coin Flip
+        clear()
+        result = random.choice(["Heads", "Tails"])
+        type("🪙  Coin Flip")
+        print(" ")
+        print(" ")
+        qtype("Press Enter to flip the coin, or type 'exit' to return to the menu. ")
+        flip = input()
+        clear()
+        print("🪙  Coin Flip")
+        print(" ")
+        if flip == "":
+            sstype("...")
+            clear()
+            print("🪙  Coin Flip")
+            print(" ")
+            qtype("Your Coin Landed on: " + result)
+            slp(2)
+        elif flip == "exit":
+            mode = "nmenu"
         mode = "nmenu"
     elif mode == "8": # About Section
         clear()
@@ -86,7 +112,7 @@ while isactive == 1:
         slp(0.5)
         print(" ")
         print(" ")
-        qtype("This project is being built over 21 days, with a new feature being developed every 3 days,")
+        qtype("This project is being built over 21 days, with new features being developed every 3 days,")
         slp(0.5)
         print(" ")
         print(" ")
