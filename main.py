@@ -38,7 +38,7 @@ while isactive == 1:
         type("Hello there! :)")
         slp(1)
         print(" ")
-        type("Welcome to My 21 Days of Python Challenge!")
+        qtype("Welcome to My 21 Days of Python Challenge!")
         slp(1)
         clear()
         mode = "amenu"
