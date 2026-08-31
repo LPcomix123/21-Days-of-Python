@@ -36,8 +36,8 @@ while isactive == 1:
         type("Welcome to My 21 Days of Python Challenge!")
         slp(1)
         clear()
-        mode = "menu"
-    elif mode == "menu" or mode == "":
+        mode = "amenu"
+    elif mode == "amenu":
         clear()
         type("21 Days of Python")
         print("")
@@ -49,9 +49,17 @@ while isactive == 1:
             print("")
         type("Option number: ")
         mode = input()
+    elif mode == "nmenu" or mode == "":
+        clear()
+        print("21 Days of Python")
+        print("Please select an option to continue:")
+        menu_options = ["1. feature1", "2. feature2", "3. feature3", "4. feature4", "5. feature5", "6. feature6", " ", "7. About", "0. Exit"]
+        for item in menu_options:
+            print(item)
+        mode = input("Option number: ")
     elif mode == "0":
         clear()
-        type("Exiting the program...")
+        qtype("Exiting the program...")
         slp(0.25)
         print("")
         type("Bye Bye! :)")
@@ -59,20 +67,38 @@ while isactive == 1:
         clear()
         isactive = 0
     elif mode == "1":
-        print("Feature 1 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 1 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "2":
-        print("Feature 2 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 2 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "3": 
-        print("Feature 3 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 3 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "4":
-        print("Feature 4 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 4 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "5":
-        print("Feature 5 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 5 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "6":
-        print("Feature 6 is currently under development. Please check back later.")
+        clear()
+        qtype("Feature 6 is currently under development. Please check back later.")
+        slp(1)
+        mode = "nmenu"
     elif mode == "7":
         clear()
-        type("About this program:")
+        qtype("About this program:")
         slp(0.5)
         print(" ")
         print(" ")
@@ -93,3 +119,8 @@ while isactive == 1:
         qtype("Press Enter to return to the menu")
         mode = input()
         clear()
+    else:
+        clear()
+        qtype("Invalid option. Please try again.")
+        slp(1)
+        mode = "nmenu"
