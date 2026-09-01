@@ -76,7 +76,7 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "1" or mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
+    elif mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
@@ -92,12 +92,12 @@ while isactive == 1:
         print("🪙  Coin Flip")
         print(" ")
         if flip == "":
-            result = random.choice(["Heads", "Tails"])
+            cresult = random.choice(["Heads", "Tails"])
             sstype("...")
             clear()
             print("🪙  Coin Flip")
             print(" ")
-            qtype("Your Coin Landed on: " + result)
+            qtype("Your Coin Landed on: " + cresult)
             slp(2)
             mode = "nmenu"
         elif flip == "exit":
@@ -107,6 +107,44 @@ while isactive == 1:
             qtype("Invalid option. Please try again.")
             slp(1)
             mode = "2"
+    elif mode == "1": # Dice Roller
+        clear()
+        type("🎲  Dice Roll")
+        print(" ")
+        print(" ")
+        qtype("Press Enter to roll the dice, or type 'exit' to return to the menu. ")
+        roll = input()
+        if roll == "":
+            dresult = random.randint(1, 6)
+            clear()
+            print("🎲  Dice Roll")
+            print(" ")
+            if dresult == 1:
+                dresult = "\033[1m" + "1 ⚀ " + "\033[0m"
+            elif dresult == 2:
+                dresult = "\033[1m" + "2 ⚁ " + "\033[0m"
+            elif dresult == 3:
+                dresult = "\033[1m" + "3 ⚂ " + "\033[0m"
+            elif dresult == 4:
+                dresult = "\033[1m" + "4 ⚃ " + "\033[0m"
+            elif dresult == 5:
+                dresult = "\033[1m" + "5 ⚄ " + "\033[0m"
+            elif dresult == 6:
+                dresult = "\033[1m" + "6 ⚅ " + "\033[0m"
+            sstype("...")
+            clear()
+            print("🎲  Dice Roll")
+            print(" ")
+            qtype("You rolled a: " + str(dresult))
+            slp(2)
+            mode = "nmenu"
+        elif roll == "exit":
+            mode = "nmenu"
+        else:
+            clear()
+            qtype("Invalid option. Please try again.")
+            slp(1)
+            mode = "1"
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
@@ -130,8 +168,8 @@ while isactive == 1:
         clear()
     elif mode == "42": # Easter Egg
         clear()
-        qtype("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything")
-        stype("\033[1m" + "...")
+        qtype("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything" + "\033[0m")
+        stype("\033[1m" + "..." + "\033[0m")
         slp(0.5)
         print("")
         print("")
