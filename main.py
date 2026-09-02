@@ -159,6 +159,9 @@ while isactive == 1:
                 print(" ")
                 print(i)
                 slp(1)
+            clear()
+            print("⏳  Countdown")
+            print(" ")
             print("0")
             slp(1)
             mode = "nmenu"
@@ -191,7 +194,7 @@ while isactive == 1:
         clear()
     elif mode == "42": # Easter Egg
         clear()
-        qtype("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything" + "\033[0m")
+        type("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything" + "\033[0m")
         stype("\033[1m" + "..." + "\033[0m")
         slp(0.5)
         print("")
