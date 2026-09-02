@@ -76,7 +76,7 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "3" or mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
+    elif mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
@@ -145,6 +145,29 @@ while isactive == 1:
             qtype("Invalid option. Please try again.")
             slp(1)
             mode = "1"
+    elif mode == "3": # Countdown
+        clear()
+        type("⏳  Countdown")
+        print(" ")
+        print(" ")
+        qtype("Enter a whole number of seconds to count down from or 'exit' to return to the menu: ")
+        countdown = input()
+        if countdown.isdigit():
+            for i in range(int(countdown), 0, -1):
+                clear()
+                print("⏳  Countdown")
+                print(" ")
+                print(i)
+                slp(1)
+            print("0")
+            slp(1)
+            mode = "nmenu"
+        elif countdown == "exit":
+            mode = "nmenu"
+        else:
+            clear()
+            qtype("Invalid input. Please enter a whole number.")
+            slp(1)        
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
