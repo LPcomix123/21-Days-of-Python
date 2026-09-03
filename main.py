@@ -164,6 +164,8 @@ while isactive == 1:
             print(" ")
             print("0")
             slp(1)
+            qtype("Times up!")
+            slp(1)
             mode = "nmenu"
         elif countdown == "exit":
             mode = "nmenu"
