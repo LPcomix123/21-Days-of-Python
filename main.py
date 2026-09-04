@@ -271,7 +271,7 @@ while isactive == 1:
                 mode = "6"
         guesses += 1
         clear()
-        print("You have guessed", guesses, "times, and the number was", num,)
+        print("You guessed", guesses, "times, and the number was", num,)
         slp(2)
         mode = "nmenu"
     elif mode == "8": # About Section
