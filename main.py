@@ -34,7 +34,7 @@ if current_day > 21:
 elif current_day < 1:
     current_day = 1
 isactive = 1
-mode = "6"
+mode = "startup"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
