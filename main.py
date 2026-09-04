@@ -34,7 +34,7 @@ if current_day > 21:
 elif current_day < 1:
     current_day = 1
 isactive = 1
-mode = "startup"
+mode = "6"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
@@ -76,7 +76,7 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "4" or mode == "5" or mode == "6" or mode == "7": # Feature Under Development
+    elif mode == "4" or mode == "5" or mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
@@ -115,7 +115,7 @@ while isactive == 1:
         qtype("Press Enter to roll the dice, or type 'exit' to return to the menu. ")
         roll = input()
         if roll == "":
-            dresult = random.randint(1, 6)
+            dresult = random.randrange(1, 7)
             clear()
             print("🎲  Dice Roll")
             print(" ")
@@ -176,6 +176,80 @@ while isactive == 1:
             clear()
             qtype("Invalid input. Please enter a whole number.")
             slp(1)        
+    elif mode == "6": # Number Guesser
+        clear()
+        type("🔢  Number Guesser")
+        print(" ")
+        print(" ")
+        qtype("Select a difficulty level:")
+        print(" ")
+        qtype("1. 🟢 Easy (1-10)")
+        print(" ")
+        qtype("2. 🟡 Medium (1-50)")
+        print(" ")
+        qtype("3. 🔴 Hard (1-100)")
+        print(" ")
+        qtype("4. 🟣 Extreme (1-1000)")
+        print(" ")
+        qtype("5. ⚪ UNLIMITED (1-♾️ )")
+        print(" ")
+        level = input("Option number: ") 
+        if level == "1":
+            difficulty = "🟢 Easy (1-10)"
+            ran = "(1-10)"
+            num = random.randrange(1, 10)
+        elif level == "2":
+            difficulty = "🟡 Medium (1-50)"
+            ran = "(1-50)"
+            num = random.randrange(1, 50)
+        elif level == "3":
+            difficulty = "🔴 Hard (1-100)"
+            ran = "(1-100)"
+            num = random.randrange(1, 100)
+        elif level == "4":
+            difficulty = "🟣 Extreme (1-1000)"
+            ran = "(1-1000)"
+            num = random.randrange(1, 1000)
+        elif level == "5":
+            difficulty = "⚪ UNLIMITED (1-♾️ )"
+            ran = "(1-♾️ )"
+            num = random.randrange(1, 99999999999999999999999999999999999)
+        else:
+            clear()
+            qtype("Invalid option. Please try again.")
+            slp(1)
+            mode = "6"
+            difficulty = ""
+            num = 0
+        clear()
+        print("🔢  Number Guesser")
+        print(" ")
+        type(difficulty)
+        print(" ")
+        print(" ")
+        guesses = 0
+        guess = input("Guess a number between " + ran + ": ")
+        while guess != str(num):
+            guesses += 1
+            if guess.isdigit():
+                if int(guess) < num:
+                    print("Too low! Try again.")
+                    slp(0.5)
+                    clear()
+                    print(difficulty)
+                    print(" ")
+                    print(" ")
+                    guess = input("Guess a number between " + ran + ": ")
+                elif int(guess) > num:
+                    print("Too high! Try again.")
+                    slp(0.5)
+                    clear()
+                    print(difficulty)
+                    print(" ")
+                    print(" ")
+                    guess = input("Guess a number between " + ran + ": ")
+            else:
+                print("Invalid input. Please enter a whole number.")
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
