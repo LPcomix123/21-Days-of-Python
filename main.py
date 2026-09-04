@@ -197,19 +197,23 @@ while isactive == 1:
         if level == "1":
             difficulty = "🟢 Easy (1-10)"
             ran = "(1-10)"
-            num = random.randrange(1, 10)
+            num = random.randrange(1, 11)
+            max = 10
         elif level == "2":
             difficulty = "🟡 Medium (1-50)"
             ran = "(1-50)"
-            num = random.randrange(1, 50)
+            num = random.randrange(1, 51)
+            max = 50
         elif level == "3":
             difficulty = "🔴 Hard (1-100)"
             ran = "(1-100)"
-            num = random.randrange(1, 100)
+            num = random.randrange(1, 101)
+            max = 100
         elif level == "4":
             difficulty = "🟣 Extreme (1-1000)"
             ran = "(1-1000)"
-            num = random.randrange(1, 1000)
+            num = random.randrange(1, 1001)
+            max = 1000
         elif level == "5":
             difficulty = "⚪ UNLIMITED (1-♾️ )"
             ran = "(1-♾️ )"
@@ -239,7 +243,7 @@ while isactive == 1:
                     print(difficulty)
                     print(" ")
                     print(" ")
-                    guess = input("Guess a number between " + ran + ": ")
+                    guess = input("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
                 elif int(guess) > num:
                     print("Too high! Try again.")
                     slp(0.5)
@@ -247,9 +251,29 @@ while isactive == 1:
                     print(difficulty)
                     print(" ")
                     print(" ")
-                    guess = input("Guess a number between " + ran + ": ")
+                    guess = input("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
+                elif guess == "exit":
+                    mode = "nmenu"
+                    break
+                elif int(guess) >= max:
+                    if level != "5":
+                        print("Number out of range. Please enter a number between 1 and " + str(max) + ".")
+                        slp(1)
+                        clear()
+                        print(difficulty)
+                        print(" ")
+                    print(" ")
+                    guess = input("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
             else:
                 print("Invalid input. Please enter a whole number.")
+                slp(1)
+                clear()
+                mode = "6"
+        guesses += 1
+        clear()
+        print("You have guessed", guesses, "times, and the number was", num,)
+        slp(2)
+        mode = "nmenu"
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
