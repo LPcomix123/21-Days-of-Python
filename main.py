@@ -219,6 +219,7 @@ while isactive == 1:
             difficulty = "⚪ UNLIMITED (1-♾️ )"
             ran = "(1-♾️ )"
             num = random.randrange(1, 99999999999999999999999999999999999)
+            max = 99999999999999999999999999999999999
         elif level == "exit":
             mode = "nmenu"
             continue
@@ -235,7 +236,7 @@ while isactive == 1:
         print(" ")
         print(" ")
         guesses = 0
-        qtype("Guess a number between " + ran + ": ")
+        qtype("Guess a number between " + ran + " or type 'exit' to quit: ")
         guess = input()
         while guess != str(num):
             guesses += 1
@@ -244,22 +245,21 @@ while isactive == 1:
                 break
             elif guess.isdigit():
                 if int(guess) > max or int(guess) < 1:
-                    if level != "5":
-                        guesses = guesses - 1
-                        qtype("Number out of range. Please enter a number between 1 and " + str(max) + ".")
-                        slp(1)
-                        clear()
-                        print(difficulty)
-                        print(" ")
-                        print("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
-                        guess = input()
+                    guesses = guesses - 1
+                    qtype("Number out of range. Please enter a number between 1 and " + str(max) + ".")
+                    slp(1)
+                    clear()
+                    print(difficulty)
+                    print(" ")
+                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
+                    guess = input()
                 elif int(guess) < num:
                     qtype("Too low! Try again.")
                     slp(0.5)
                     clear()
                     print(difficulty)
                     print(" ")
-                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
+                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
                     guess = input()
                 elif int(guess) > num:
                     qtype("Too high! Try again.")
@@ -267,7 +267,7 @@ while isactive == 1:
                     clear()
                     print(difficulty)
                     print(" ")
-                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + ": ")
+                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
                     guess = input()
                 else:
                     clear()
@@ -288,11 +288,11 @@ while isactive == 1:
                 print(str(guesses), end="", flush=True)
                 qtype(", Guess a number between ")
                 print(ran , end="", flush=True)
-                qtype(": ")
+                qtype("or type 'exit' to quit: ")
                 guess = input()
         guesses += 1
         clear()
-        qtype("Congrats!You guessed ")
+        qtype("Congrats! You guessed ")
         print(guesses, end="", flush=True)
         qtype(" times, and the number was ")
         print(num)
