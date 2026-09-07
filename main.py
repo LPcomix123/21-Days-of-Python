@@ -292,6 +292,10 @@ while isactive == 1:
                 guess = input()
         guesses += 1
         clear()
+        if guess == "777":
+            qtype("777, Lucky number detected!")
+            slp(1)
+            clear()
         qtype("Congrats! You guessed ")
         print(guesses, end="", flush=True)
         qtype(" times, and the number was ")
