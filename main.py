@@ -245,6 +245,10 @@ while isactive == 1:
                 break
             elif guess.isdigit():
                 if int(guess) > max or int(guess) < 1:
+                    if guess == "777":
+                        qtype("777, Lucky number detected! But")
+                        slp(0.5)
+                        clear()
                     guesses = guesses - 1
                     qtype("Number out of range. Please enter a number between 1 and " + str(max) + ".")
                     slp(1)
@@ -254,6 +258,10 @@ while isactive == 1:
                     print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
                     guess = input()
                 elif int(guess) < num:
+                    if guess == "777":
+                        qtype("777, Lucky number detected! But")
+                        slp(0.5)
+                        clear()
                     qtype("Too low! Try again.")
                     slp(0.5)
                     clear()
@@ -262,6 +270,10 @@ while isactive == 1:
                     print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
                     guess = input()
                 elif int(guess) > num:
+                    if guess == "777":
+                        qtype("777, Lucky number detected! But")
+                        slp(0.5)
+                        clear()
                     qtype("Too high! Try again.")
                     slp(0.5)
                     clear()
