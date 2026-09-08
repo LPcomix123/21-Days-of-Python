@@ -34,7 +34,7 @@ if current_day > 21:
 elif current_day < 1:
     current_day = 1
 isactive = 1
-mode = "6"
+mode = "startup"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
@@ -193,6 +193,9 @@ while isactive == 1:
         print(" ")
         qtype("5. ⚪ UNLIMITED (1-♾️ )")
         print(" ")
+        qtype("6. 📊 Stats")
+        print(" ")
+        print(" ")
         level = "0"
         level = input("Option number: ") 
         if level == "1":
@@ -223,6 +226,23 @@ while isactive == 1:
         elif level == "exit":
             mode = "nmenu"
             continue
+        elif level == "6":
+            clear()
+            difficulty = "📊 Stats"
+            type(difficulty)
+            print(" ") 
+            print(" ")
+            qtype("Your session stats: ")
+            print(" ")
+            print(" ")
+            slp(0.5)
+            qtype("Stats are currently under development. Please check back later.")
+            slp(0.5)
+            print(" ")
+            print(" ")
+            qtype("Press Enter to return to the menu")
+            mode = input()
+            continue        
         else:
             clear()
             qtype("Invalid option. Please try again.")
