@@ -36,6 +36,7 @@ elif current_day < 1:
 isactive = 1
 games = 0
 wins = 0
+total_guesses = 0
 mode = "6"
 
 while isactive == 1:
@@ -249,6 +250,17 @@ while isactive == 1:
             slp(0.5)
             print(" ")
             print(" ")
+            qtype("Total Guesses: ")
+            qtype(str(total_guesses))
+            slp(0.5)
+            print(" ")
+            print(" ")
+            qtype("Avarage Guesses: ")
+            avarage_guesses = total_guesses / games
+            qtype(str(avarage_guesses))
+            slp(0.5)
+            print(" ")
+            print(" ")
             qtype("More features for session stats are currently in development, check back later.")
             slp(0.5)
             print(" ")
@@ -271,88 +283,94 @@ while isactive == 1:
         guesses = 0
         qtype("Guess a number between " + ran + " or type 'exit' to quit: ")
         guess = input()
-        while guess != str(num):
-            guesses += 1
-            if guess == "exit":
-                wins = wins - 1
-                mode = "nmenu"
-                break
-            elif guess.isdigit():
-                if int(guess) > max or int(guess) < 1:
-                    if guess == "777":
-                        qtype("777, Lucky number detected! But")
+        has_won = 0
+        while has_won == 0:
+            if guess != str(num):
+                guesses += 1
+                if guess == "exit":
+                    wins = wins - 1
+                    mode = "nmenu"
+                    break
+                elif guess.isdigit():
+                    if int(guess) > max or int(guess) < 1:
+                        if guess == "777":
+                            qtype("777, Lucky number detected! But")
+                            slp(0.5)
+                            clear()
+                        guesses = guesses - 1
+                        qtype("Number out of range. Please enter a number between 1 and " + str(max) + ".")
+                        slp(1)
+                        clear()
+                        print("🔢  Number Guesser")
+                        print(" ")
+                        print(difficulty)
+                        print(" ")
+                        print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ", end="", flush=True)
+                        guess = input()
+                    elif int(guess) < num:
+                        if guess == "777":
+                            qtype("777, Lucky number detected! But")
+                            slp(0.5)
+                            clear()
+                        qtype("Too low! Try again.")
                         slp(0.5)
                         clear()
-                    guesses = guesses - 1
-                    qtype("Number out of range. Please enter a number between 1 and " + str(max) + ".")
-                    slp(1)
-                    clear()
-                    print("🔢  Number Guesser")
-                    print(" ")
-                    print(difficulty)
-                    print(" ")
-                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ", end="", flush=True)
-                    guess = input()
-                elif int(guess) < num:
-                    if guess == "777":
-                        qtype("777, Lucky number detected! But")
+                        print("🔢  Number Guesser")
+                        print(" ")
+                        print(difficulty)
+                        print(" ")
+                        print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ", end="", flush=True)
+                        guess = input()
+                    elif int(guess) > num:
+                        if guess == "777":
+                            qtype("777, Lucky number detected! But")
+                            slp(0.5)
+                            clear()
+                        qtype("Too high! Try again.")
                         slp(0.5)
                         clear()
-                    qtype("Too low! Try again.")
-                    slp(0.5)
-                    clear()
-                    print("🔢  Number Guesser")
-                    print(" ")
-                    print(difficulty)
-                    print(" ")
-                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ", end="", flush=True)
-                    guess = input()
-                elif int(guess) > num:
-                    if guess == "777":
-                        qtype("777, Lucky number detected! But")
-                        slp(0.5)
+                        print(difficulty)
+                        print(" ")
+                        print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
+                        guess = input()
+                    else:
                         clear()
-                    qtype("Too high! Try again.")
-                    slp(0.5)
-                    clear()
-                    print(difficulty)
-                    print(" ")
-                    print("Guess number " + str(guesses) + ", Guess a number between " + ran + " or type 'exit' to quit: ")
-                    guess = input()
+                        qtype("Invalid input. Please enter a whole number.")
+                        slp(1)
+                        clear()
+                        continue
                 else:
                     clear()
                     qtype("Invalid input. Please enter a whole number.")
+                    guesses = guesses - 1
                     slp(1)
                     clear()
-                    continue
+                    qtype(difficulty)
+                    print(" ")
+                    print(" ")
+                    qtype("Guess number ")
+                    print(str(guesses), end="", flush=True)
+                    qtype(", Guess a number between ")
+                    print(ran , end="", flush=True)
+                    qtype("or type 'exit' to quit: ")
+                    guess = input()
             else:
+                guesses += 1
                 clear()
-                qtype("Invalid input. Please enter a whole number.")
-                guesses = guesses - 1
-                slp(1)
-                clear()
-                qtype(difficulty)
-                print(" ")
-                print(" ")
-                qtype("Guess number ")
-                print(str(guesses), end="", flush=True)
-                qtype(", Guess a number between ")
-                print(ran , end="", flush=True)
-                qtype("or type 'exit' to quit: ")
-                guess = input()
-        guesses += 1
-        clear()
-        if guess == "777":
-            qtype("777, Lucky number detected!")
-            slp(1)
-            clear()
-        games = games + 1
-        wins = wins + 1
-        qtype("Congrats! You guessed ")
-        print(guesses, end="", flush=True)
-        qtype(" times, and the number was ")
-        print(num)
-        slp(2)
+                if guess == "777":
+                    qtype("777, Lucky number detected!")
+                    slp(1)
+                    clear()
+                games = games + 1
+                wins = wins + 1
+                has_won = 1
+                total_guesses = total_guesses + guesses
+                qtype("Congrats! You guessed ")
+                print(guesses, end="", flush=True)
+                qtype(" times, and the number was ")
+                print(num)
+                slp(2)
+                continue
         mode = "nmenu"
     elif mode == "4": # Magic 8 Ball
         answers = [
