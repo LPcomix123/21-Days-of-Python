@@ -37,7 +37,7 @@ isactive = 1
 games = 0
 wins = 0
 total_guesses = 0
-mode = "6"
+mode = "startup"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
