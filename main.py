@@ -288,7 +288,6 @@ while isactive == 1:
             if guess != str(num):
                 guesses += 1
                 if guess == "exit":
-                    wins = wins - 1
                     mode = "nmenu"
                     break
                 elif guess.isdigit():
