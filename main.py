@@ -37,6 +37,7 @@ isactive = 1
 games = 0
 wins = 0
 total_guesses = 0
+streak = 0
 mode = "startup"
 
 while isactive == 1:
@@ -261,6 +262,11 @@ while isactive == 1:
             slp(0.5)
             print(" ")
             print(" ")
+            qtype("Win Streak: ")
+            qtype(str(streak))
+            slp(0.5)
+            print(" ")
+            print(" ")
             qtype("More features for session stats are currently in development, check back later.")
             slp(0.5)
             print(" ")
@@ -290,6 +296,7 @@ while isactive == 1:
                 if guess == "exit":
                     mode = "nmenu"
                     break
+                    streak = 0
                 elif guess.isdigit():
                     if int(guess) > max or int(guess) < 1:
                         if guess == "777":
@@ -363,6 +370,7 @@ while isactive == 1:
                 games = games + 1
                 wins = wins + 1
                 has_won = 1
+                streak = streak + 1
                 total_guesses = total_guesses + guesses
                 qtype("Congrats! You guessed ")
                 print(guesses, end="", flush=True)
