@@ -38,7 +38,9 @@ games = 0
 wins = 0
 total_guesses = 0
 streak = 0
-mode = "startup"
+fewest_guesses = 0
+most_guesses = 0
+mode = "6"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
@@ -257,8 +259,21 @@ while isactive == 1:
             print(" ")
             print(" ")
             qtype("Avarage Guesses: ")
-            avarage_guesses = total_guesses / games
+            if games != 0:
+                avarage_guesses = total_guesses / games
+            else:
+                avarage_guesses = "No games Played Yet"
             qtype(str(avarage_guesses))
+            slp(0.5)
+            print(" ")
+            print(" ")
+            qtype("Fewest Guesses: ")
+            qtype(str(fewest_guesses))
+            slp(0.5)
+            print(" ")
+            print(" ")
+            qtype("Most Guesses: ")
+            qtype(str(most_guesses))
             slp(0.5)
             print(" ")
             print(" ")
@@ -371,6 +386,10 @@ while isactive == 1:
                 wins = wins + 1
                 has_won = 1
                 streak = streak + 1
+                if guesses < fewest_guesses:
+                    fewest_guesses = guesses
+                if guesses > most_guesses:
+                    most_guesses = guesses
                 total_guesses = total_guesses + guesses
                 qtype("Congrats! You guessed ")
                 print(guesses, end="", flush=True)
