@@ -40,7 +40,7 @@ total_guesses = 0
 streak = 0
 fewest_guesses = 0
 most_guesses = 0
-mode = "6"
+mode = "startup"
 
 while isactive == 1:
     if mode == "startup": # Startup Message
@@ -82,7 +82,7 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-    elif mode == "5" or mode == "7": # Feature Under Development
+    elif mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
@@ -481,9 +481,15 @@ while isactive == 1:
         slp(2)
         clear()
         mode = "nmenu"
+    elif mode == "5":
+        clear()
+        type("📱  Calcutor:")
+        slp(0.5)
+        qtype("The Calculator function of this program is currently under development")
+        slp(1)
+        mode = "nmenu"
     else: # Invalid Option
         clear()
         qtype("Invalid option. Please try again.")
         slp(1)
         mode = "nmenu"
-        
