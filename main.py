@@ -485,7 +485,13 @@ while isactive == 1:
         clear()
         type("📱  Calcutor:")
         slp(0.5)
+        print(" ")
+        print(" ")
         qtype("The Calculator function of this program is currently under development")
+        slp(0.5)
+        print(" ")
+        print(" ")
+        qtype("Features coming soon include: Addition, Subtraction, Division and Multiplication., Stay tuned for when they're released")
         slp(1)
         mode = "nmenu"
     else: # Invalid Option
