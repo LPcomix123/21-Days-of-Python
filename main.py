@@ -43,6 +43,7 @@ most_guesses = 0
 mode = "startup"
 
 while isactive == 1:
+
     if mode == "startup": # Startup Message
         clear()
         slp(1)
@@ -53,6 +54,7 @@ while isactive == 1:
         slp(1)
         clear()
         mode = "amenu"
+
     elif mode == "amenu": # Animated Menu
         clear()
         type("21 Days of Python")
@@ -65,6 +67,7 @@ while isactive == 1:
             print("")
         type("Option number: ")
         mode = input()
+
     elif mode == "nmenu" or mode == "": # Not Animated Menu
         clear()
         print("21 Days of Python")
@@ -73,6 +76,7 @@ while isactive == 1:
         for item in menu_options:
             print(item)
         mode = input("Option number: ")
+
     elif mode == "0": # Exit
         clear()
         qtype("Exiting the program...")
@@ -82,11 +86,13 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
+
     elif mode == "7": # Feature Under Development
         clear()
         qtype("Feature " + mode + " is currently under development. Please check back later.")
         slp(1)
         mode = "nmenu"
+
     elif mode == "2": # Coin Flip
         clear()
         type("🪙  Coin Flip")
@@ -113,6 +119,7 @@ while isactive == 1:
             qtype("Invalid option. Please try again.")
             slp(1)
             mode = "2"
+
     elif mode == "1": # Dice Roller
         clear()
         type("🎲  Dice Roll")
@@ -151,6 +158,7 @@ while isactive == 1:
             qtype("Invalid option. Please try again.")
             slp(1)
             mode = "1"
+
     elif mode == "3": # Countdown
         clear()
         type("⏳  Countdown")
@@ -182,6 +190,7 @@ while isactive == 1:
             clear()
             qtype("Invalid input. Please enter a whole number.")
             slp(1)        
+
     elif mode == "6": # Number Guesser
         clear()
         type("🔢  Number Guesser")
@@ -398,6 +407,7 @@ while isactive == 1:
                 slp(2)
                 continue
         mode = "nmenu"
+
     elif mode == "4": # Magic 8 Ball
         answers = [
             "It is certain.",
@@ -447,6 +457,7 @@ while isactive == 1:
             type(random.choice(answers))
             slp(2)
             mode = "nmenu"
+
     elif mode == "8": # About Section
         clear()
         qtype("About this program:")
@@ -468,6 +479,7 @@ while isactive == 1:
         qtype("Press Enter to return to the menu")
         mode = input()
         clear()
+
     elif mode == "42": # Easter Egg
         clear()
         type("\033[1m" + "The Answer to the Ultimate Question of Life, the Universe, and Everything" + "\033[0m")
@@ -481,6 +493,7 @@ while isactive == 1:
         slp(2)
         clear()
         mode = "nmenu"
+
     elif mode == "5":
         clear()
         type("📱  Calcutor:")
@@ -494,6 +507,7 @@ while isactive == 1:
         qtype("Features coming soon include: Addition, Subtraction, Division and Multiplication., Stay tuned for when they're released")
         slp(1)
         mode = "nmenu"
+        
     else: # Invalid Option
         clear()
         qtype("Invalid option. Please try again.")
