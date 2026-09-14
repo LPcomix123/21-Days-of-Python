@@ -486,3 +486,4 @@ while isactive == 1:
         qtype("Invalid option. Please try again.")
         slp(1)
         mode = "nmenu"
+        
