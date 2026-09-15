@@ -496,18 +496,42 @@ while isactive == 1:
 
     elif mode == "5":
         clear()
-        type("📱  Calcutor:")
+        type("📱  Calcutor")
         slp(0.5)
         print(" ")
         print(" ")
-        qtype("The Calculator function of this program is currently under development")
-        slp(0.5)
+        qtype("Enter the first number: ")
+        fnum = input()
+        clear()
+        print("📱  Calcutor")
         print(" ")
+        qtype("Enter the seccond number: ")
+        snum = input()
+        clear()
+        print("📱  Calcutor")
         print(" ")
-        qtype("Features coming soon include: Addition, Subtraction, Division and Multiplication., Stay tuned for when they're released")
-        slp(1)
+        qtype("Enter the function (eg: +, /, *, -): ")
+        func = input()
+        clear()
+        if func == "+":
+            ans = fnum + snum
+        elif func == "-":
+            ans = fnum - snum
+        elif func == "/" or func == "÷":
+            ans = fnum / snum
+        elif func == "x" or func == "X" or func == "*":
+            ans = fnum * snum
+        print("📱  Calcutor")
+        print(" ")
+        qtype(fnum)
+        qtype(func)
+        qtype(snum)
+        qtype("=")
+        qtype(ans)
+        slp(1.5)
+        clear()
         mode = "nmenu"
-        
+
     else: # Invalid Option
         clear()
         qtype("Invalid option. Please try again.")
