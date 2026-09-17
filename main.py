@@ -40,7 +40,7 @@ total_guesses = 0
 streak = 0
 fewest_guesses = 0
 most_guesses = 0
-mode = "startup"
+mode = "5"
 
 while isactive == 1:
 
@@ -496,19 +496,19 @@ while isactive == 1:
 
     elif mode == "5":
         clear()
-        type("📱  Calcutor")
+        type("📱  Calculator")
         slp(0.5)
         print(" ")
         print(" ")
         qtype("Enter the first number: ")
-        fnum = input()
+        fnum = float(input())
         clear()
-        print("📱  Calcutor")
+        print("📱  Calculator")
         print(" ")
-        qtype("Enter the seccond number: ")
-        snum = input()
+        qtype("Enter the second number: ")
+        snum = float(input())
         clear()
-        print("📱  Calcutor")
+        print("📱  Calculator")
         print(" ")
         qtype("Enter the function (eg: +, /, *, -): ")
         func = input()
@@ -518,16 +518,29 @@ while isactive == 1:
         elif func == "-":
             ans = fnum - snum
         elif func == "/" or func == "÷":
+            if snum == 0:
+                qtype("Cannot Divide by 0")
+                slp(1)
+                mode = "nmenu"
+                continue
             ans = fnum / snum
         elif func == "x" or func == "X" or func == "*":
             ans = fnum * snum
-        print("📱  Calcutor")
+        else:
+            qtype("Invalid function.")
+            slp(0.5)
+            mode = "nmenu"
+            continue
+        print("📱  Calculator")
         print(" ")
-        qtype(fnum)
+        qtype(str(fnum))
         qtype(func)
-        qtype(snum)
+        qtype(str(snum))
         qtype("=")
-        qtype(ans)
+        if ans % 1 == 0:
+            qtype(str(int(ans)))
+        else:
+            qtype(str(ans))
         slp(1.5)
         clear()
         mode = "nmenu"
