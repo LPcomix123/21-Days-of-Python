@@ -494,7 +494,7 @@ while isactive == 1:
         clear()
         mode = "nmenu"
 
-    elif mode == "5":
+    elif mode == "5": # Calculator 
         clear()
         type("📱  Calculator")
         slp(0.5)
