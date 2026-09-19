@@ -61,7 +61,7 @@ while isactive == 1:
         print("")
         type("Please select an option to continue:")
         print("")
-        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "8. ℹ️  About", "0. ❌ Exit"]
+        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "7. ℹ️  About", "0. ❌ Exit"]
         for item in menu_options:
             qtype(item)
             print("")
@@ -72,7 +72,7 @@ while isactive == 1:
         clear()
         print("21 Days of Python")
         print("Please select an option to continue:")
-        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "8. ℹ️  About", "0. ❌ Exit"]
+        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "7. ℹ️  About", "0. ❌ Exit"]
         for item in menu_options:
             print(item)
         mode = input("Option number: ")
@@ -448,7 +448,7 @@ while isactive == 1:
             slp(2)
             mode = "nmenu"
 
-    elif mode == "8": # About Section
+    elif mode == "7": # About Section
         clear()
         qtype("About this program:")
         slp(0.5)
