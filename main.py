@@ -30,7 +30,7 @@ start_date = date(2026, 8, 30)
 today = date.today()
 current_day = (today - start_date).days + 1
 if current_day > 21:
-    current_day = 21
+    current_day = "Completed"
 elif current_day < 1:
     current_day = 1
 isactive = 1
@@ -61,7 +61,7 @@ while isactive == 1:
         print("")
         type("Please select an option to continue:")
         print("")
-        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", "7. 📊 Text Stats", " ", "8. ℹ️  About", "0. ❌ Exit"]
+        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "8. ℹ️  About", "0. ❌ Exit"]
         for item in menu_options:
             qtype(item)
             print("")
@@ -72,7 +72,7 @@ while isactive == 1:
         clear()
         print("21 Days of Python")
         print("Please select an option to continue:")
-        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", "7. 📊 Text Stats", " ", "8. ℹ️  About", "0. ❌ Exit"]
+        menu_options = ["1. 🎲 Dice Roller", "2. 🪙  Coin Flip", "3. ⏳ Countdown", "4. 🎱 Magic 8 Ball", "5. 📱 Calculator", "6. 🔢 Number Guesser", " ", "8. ℹ️  About", "0. ❌ Exit"]
         for item in menu_options:
             print(item)
         mode = input("Option number: ")
@@ -86,12 +86,6 @@ while isactive == 1:
         slp(1)
         clear()
         isactive = 0
-
-    elif mode == "7": # Feature Under Development
-        clear()
-        qtype("Feature " + mode + " is currently under development. Please check back later.")
-        slp(1)
-        mode = "nmenu"
 
     elif mode == "2": # Coin Flip
         clear()
@@ -291,10 +285,6 @@ while isactive == 1:
             slp(0.5)
             print(" ")
             print(" ")
-            qtype("More features for session stats are currently in development, check back later.")
-            slp(0.5)
-            print(" ")
-            print(" ")
             qtype("Press Enter to return to the menu")
             mode = input()
             continue        
@@ -464,6 +454,10 @@ while isactive == 1:
         slp(0.5)
         print(" ")
         print(" ")
+        qtype("This project has been fulfilled and is now not under development,")
+        slp(0.5)
+        print(" ")
+        print(" ")
         qtype("This is a Python project I'm building for the Stardance Sticky Streaks challenge,")
         slp(0.5)
         print(" ")
@@ -472,7 +466,10 @@ while isactive == 1:
         slp(0.5)
         print(" ")
         print(" ")
-        qtype("Current day: " + str(current_day) + "/21")
+        if current_day != "Completed":
+            qtype("Current day: " + str(current_day) + "/21")
+        else:
+            qtype("This project is officially Completed! :)")
         slp(0.5)
         print(" ")
         print(" ")
@@ -500,20 +497,22 @@ while isactive == 1:
         slp(0.5)
         print(" ")
         print(" ")
-        qtype("Enter the first number: ")
+        qtype("Enter the first number or type exit to return to the menu: ")
         fnum = float(input())
         clear()
         print("📱  Calculator")
         print(" ")
-        qtype("Enter the second number: ")
+        qtype("Enter the second number or type exit to return to the menu: ")
         snum = float(input())
         clear()
         print("📱  Calculator")
         print(" ")
-        qtype("Enter the function (eg: +, /, *, -): ")
+        qtype("Enter the function (eg: +, /, *, -) or type exit to return to the menu: ")
         func = input()
         clear()
-        if func == "+":
+        if fnum == "exit" or snum == "exit" or func == "exit":
+            mode = "nmenu"
+        elif func == "+":
             ans = fnum + snum
         elif func == "-":
             ans = fnum - snum
