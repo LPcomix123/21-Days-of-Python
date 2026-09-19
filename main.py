@@ -40,7 +40,7 @@ total_guesses = 0
 streak = 0
 fewest_guesses = 0
 most_guesses = 0
-mode = "5"
+mode = "startup"
 
 while isactive == 1:
 
