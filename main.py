@@ -498,20 +498,41 @@ while isactive == 1:
         print(" ")
         print(" ")
         qtype("Enter the first number or type exit to return to the menu: ")
-        fnum = float(input())
+        fnum = input()
+        if fnum.lower() == "exit":
+            mode = "nmenu"
+            continue
+        try:
+            fnum = float(fnum)
+        except ValueError:
+            qtype("Invalid number.")
+            slp(0.5)
+            mode = "nmenu"
+            continue
         clear()
         print("📱  Calculator")
         print(" ")
         qtype("Enter the second number or type exit to return to the menu: ")
-        snum = float(input())
+        snum = input()
+        if snum.lower() == "exit":
+            mode = "nmenu"
+            continue
+        try:
+            snum = float(snum)
+        except ValueError:
+            qtype("Invalid number.")
+            slp(0.5)
+            mode = "nmenu"
+            continue
         clear()
         print("📱  Calculator")
         print(" ")
         qtype("Enter the function (eg: +, /, *, -) or type exit to return to the menu: ")
         func = input()
         clear()
-        if fnum == "exit" or snum == "exit" or func == "exit":
+        if func.lower() == "exit":
             mode = "nmenu"
+            continue
         elif func == "+":
             ans = fnum + snum
         elif func == "-":
